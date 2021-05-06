@@ -1,0 +1,19 @@
+Wed May 05 2021, 9:45:35 AM
+
+sortNumbers sorts an array of numbers
+  sorts positive numbers
+    √ PASS: whole numbers
+    √ PASS: decimal numbers
+    √ PASS: mixed whole and decimal numbers
+  sorts negative numbers
+    √ PASS: whole numbers
+    √ PASS: decimal numbers
+    √ PASS: mixed whole and decimal numbers
+  sorts mixed positive and negative numbers
+    √ PASS: whole numbers
+    √ PASS: decimal numbers
+    √ PASS: mixed whole and decimal numbers
+  has no side-effects
+    √ PASS: returns a new array
+    √ PASS: does not modify the argument
+

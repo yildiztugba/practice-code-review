@@ -1,0 +1,31 @@
+{
+  "name": "practice-code-review",
+  "version": "1.0.0",
+  "scripts": {
+    "document": "node ./dev-scripts/document.js",
+    "test": "node ./dev-scripts/test.js",
+    "lint": "node ./dev-scripts/lint.js",
+    "format": "node ./dev-scripts/format.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hackyourfuturebelgium/practice-code-review.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hackyourfuturebelgium/practice-code-review/issues"
+  },
+  "homepage": "https://github.com/hackyourfuturebelgium/practice-code-review",
+  "devDependencies": {
+    "eslint": "^7.25.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^32.3.1",
+    "eslint-plugin-spellcheck": "0.0.17",
+    "expect": "^26.6.2",
+    "jsdoc-to-markdown": "^6.0.1",
+    "prettier": "^2.2.1"
+  }
+}
