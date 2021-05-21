@@ -68,7 +68,7 @@
 
     "prefer-arrow/prefer-arrow-functions": ["warn"],
 
-    "spellcheck/spell-checker": ["warn"],
+    "spellcheck/spell-checker": ["warn", { "minLength": 4 }],
 
     "jsdoc/check-alignment": 1,
     "jsdoc/check-indentation": 1,
