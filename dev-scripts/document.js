@@ -94,28 +94,29 @@ const appendToDocs = async (absolutePath, depth = 1) => {
     const splitAbsPath = subPath.split(path.sep);
     const relativePath = splitAbsPath
       .slice(splitAbsPath.length - (depth + 1), splitAbsPath.length)
-      .join(path.sep);
-    console.log(relativePath);
+      .join('/');
 
-    const docs = jsdocToMarkdown.renderSync({
-      files: subPath,
-      exampleLang: 'js',
-    });
-    console.log(docs);
-    const kindlessDocs = docs.replace(/\*\*Kind[^\n]+/g, '');
-    newDocs +=
-      // '\n\n---\n\n' +
-      '\n\n' +
-      `${headerLevel}## [./${relativePath}](./${relativePath})\n\n` +
-      kindlessDocs;
-
-    newToc += `\n${indent}- [${nextPath}](#${relativePath
+    const anchorId = relativePath
       .split(' ')
       .join('')
       .split('.')
       .join('')
       .split('/')
-      .join('')})`;
+      .join('');
+
+    newToc += `\n${indent}- [${nextPath}](#${anchorId})`;
+
+    const docs = jsdocToMarkdown.renderSync({
+      files: subPath,
+      exampleLang: 'js',
+    });
+    const kindlessDocs = docs.replace(/\*\*Kind[^\n]+/g, '\n');
+    newDocs +=
+      // '\n\n---\n\n' +
+      '\n\n' +
+      `<details><summary><a href="../${relativePath}" id="${anchorId}">${relativePath}</a></summary>\n\n` +
+      kindlessDocs +
+      '</details>';
   }
 };
 

@@ -56,7 +56,7 @@
 
 ## /example-built-in-sort
 
-#### [./src/sort-numbers/example-built-in-sort/sort-numbers.js](./src/sort-numbers/example-built-in-sort/sort-numbers.js)
+<details><summary><a href="../src/sort-numbers/example-built-in-sort/sort-numbers.js" id="srcsort-numbersexample-built-in-sortsort-numbersjs">src/sort-numbers/example-built-in-sort/sort-numbers.js</a></summary>
 
 <a name="sortNumbers"></a>
 
@@ -87,6 +87,8 @@ sortNumbers([1.5, 1, -1.5, 0, -1]);
 sortNumbers([-1, 0, 1]);
 // -> [-1, 0, 1]
 ```
+
+</details>
 
 ---
 
