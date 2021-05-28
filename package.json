@@ -2,7 +2,8 @@
   "name": "practice-code-review",
   "version": "1.0.0",
   "scripts": {
-    "document": "node ./dev-scripts/document.js",
+    "tree": "depcruise --include-only \"^src\" --output-type dot src | graphviz -Tsvg -odocs/dependency-graph.svg",
+    "document": "node ./dev-scripts/document.js && npm run tree",
     "test": "node ./dev-scripts/test.js",
     "lint": "node ./dev-scripts/lint.js",
     "format": "node ./dev-scripts/format.js"
@@ -29,6 +30,8 @@
     "eslint-plugin-spellcheck": "0.0.17",
     "expect": "^26.6.2",
     "jsdoc-to-markdown": "^6.0.1",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "dependency-cruiser": "^10.0.1",
+    "graphviz-cli": "^1.0.0"
   }
 }

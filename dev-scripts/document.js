@@ -7,87 +7,153 @@ import prettier from 'prettier';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-const passedPath =
-  process.argv[2] &&
-  path.normalize(path.join(__dirname, '..', process.argv[2]));
+const TITLE = 'DOCS';
 
-if (!passedPath) {
-  console.log('did not pass a path to document');
-  process.exit(0);
-}
+const sourceRelativePath = process.argv[2] || '../src';
+const docsRelativePath = process.argv[3] || '../docs/README.md';
 
-if (!fs.existsSync(passedPath)) {
-  console.log('path does not exist');
-  process.exit(0);
-}
+const SOURCE_DIR = path.normalize(path.join(__dirname, sourceRelativePath));
+const DOCS_PATH = path.normalize(path.join(__dirname, docsRelativePath));
 
-const isValidFile =
-  fs.lstatSync(passedPath).isFile() && path.extname(passedPath) === '.js';
-
-if (!isValidFile) {
-  console.log('path is not a JS file');
-  process.exit(0);
-}
-
-if (/.spec./i.test(passedPath) || /.test./i.test(passedPath)) {
-  console.log('test files are not documented');
-  process.exit(0);
-}
-
-if (/sandbox.js/i.test(passedPath)) {
-  console.log('sandbox files are not documented');
-  process.exit(0);
-}
-
-const SOURCE_PATH = passedPath;
-
-const README_PATH = path.normalize(path.join(passedPath, '..', 'README.md'));
-const oldReadme = fs.existsSync(README_PATH)
-  ? fs.readFileSync(README_PATH, 'utf-8')
-  : '';
-
-let docs = null;
 try {
-  docs = jsdocToMarkdown.renderSync({
-    files: SOURCE_PATH,
-    exampleLang: 'js',
-  });
+  fs.accessSync(SOURCE_DIR);
 } catch (err) {
-  const now = new Date();
-  const datedDocs = `\n\n> an error occurred while documenting your code\n\n> Docs generated: ${now.toDateString()}, ${now.toLocaleTimeString()}\n\n`;
-
-  const docsRegex = /(<!--[ \t]*BEGIN DOCS[ \t]*-->)([\s\S]*)(<!--[ \t]*END DOCS[ \t]*-->)/i;
-  const docsReplacer = `<!-- BEGIN DOCS -->${datedDocs}<!-- END DOCS -->`;
-  const newReadme = oldReadme.match(docsRegex)
-    ? oldReadme.replace(docsRegex, docsReplacer)
-    : oldReadme + '\n\n' + docsReplacer;
-
-  fs.writeFileSync(README_PATH, newReadme, 'utf-8');
-
-  console.log('-- unable to document your code --\n\n');
-  console.error(err);
-  process.exit(0);
+  console.log(`--- creating ${sourceRelativePath} directory ---`);
+  fs.mkdirSync(SOURCE_DIR);
 }
 
-const kindlessDocs = docs.replace(/\*\*Kind[^\n]+/g, '');
-const now = new Date();
-const datedDocs = `${kindlessDocs}\n\n> Docs generated: ${now.toDateString()}, ${now.toLocaleTimeString()}\n\n`;
+let newToc = '';
 
-const docsRegex = /(<!--[ \t]*BEGIN DOCS[ \t]*-->)([\s\S]*)(<!--[ \t]*END DOCS[ \t]*-->)/i;
-const docsReplacer = `<!-- BEGIN DOCS -->\n\n${datedDocs}\n\n<!-- END DOCS -->`;
-const newReadme = oldReadme.match(docsRegex)
-  ? oldReadme.replace(docsRegex, docsReplacer)
-  : oldReadme + '\n\n' + docsReplacer;
+let newDocs = '';
 
-let formattedDocs = newReadme;
-try {
-  formattedDocs = prettier.format(formattedDocs, {
-    parser: 'markdown',
+const appendToDocs = async (absolutePath, depth = 1) => {
+  const indent = new Array(depth).join('  ');
+  const headerLevel = new Array(depth).join('#');
+  const paths = fs.readdirSync(absolutePath);
+  paths.sort((prev, next) => {
+    const absPrev = path.join(absolutePath, prev);
+    const prevIsDir = fs.statSync(absPrev).isDirectory();
+
+    const absNext = path.join(absolutePath, next);
+    const nextIsDir = fs.statSync(absNext).isDirectory();
+
+    if (prevIsDir && !nextIsDir) {
+      return -1;
+    }
+    if (!prevIsDir && nextIsDir) {
+      return 1;
+    }
+    return 0;
   });
-} catch (o_0) {
-  console.log(o_0);
-}
 
-fs.writeFileSync(README_PATH, formattedDocs, 'utf-8');
+  for (let nextPath of paths) {
+    if (
+      /.spec./i.test(nextPath) ||
+      /.test./i.test(nextPath) ||
+      /sandbox.js/i.test(nextPath)
+    ) {
+      continue;
+    }
 
-console.log('all done documenting ' + process.argv[2] + '\n');
+    const subPath = path.normalize(path.join(absolutePath, nextPath));
+
+    const isDirectory = fs.statSync(subPath).isDirectory();
+    if (isDirectory) {
+      newToc += `\n${indent}- ${nextPath}`;
+
+      // const readmePath = path.join(subPath, 'README.md');
+      // const hasReadme =
+      //   fs.existsSync(readmePath) &&
+      //   fs.statSync(readmePath).isFile() &&
+      //   path.extname(readmePath) === '.md';
+      // if (hasReadme) {
+      //   const readmeSrc = fs.readFileSync(readmePath);
+      //   newDocs += `\n\n---\n\n${readmeSrc}`;
+      // } else {
+      newDocs += `\n\n---\n\n${headerLevel}# /${nextPath}`;
+      // }
+
+      await appendToDocs(subPath, depth + 1);
+
+      newDocs += `\n\n---\n\n[TOP](#${TITLE.split(' ').join('-')})\n\n`;
+
+      continue;
+    }
+
+    const isNotJavaScript = path.extname(subPath) !== '.js';
+    if (isNotJavaScript) {
+      continue;
+    }
+
+    const isSpecOrTestFile =
+      /.spec./i.test(path) || /.test./i.test(path) || /sandbox.js/i.test(path);
+    if (isSpecOrTestFile) {
+      continue;
+    }
+
+    const splitAbsPath = subPath.split(path.sep);
+    const relativePath = splitAbsPath
+      .slice(splitAbsPath.length - (depth + 1), splitAbsPath.length)
+      .join(path.sep);
+    console.log(relativePath);
+
+    const docs = jsdocToMarkdown.renderSync({
+      files: subPath,
+      exampleLang: 'js',
+    });
+    console.log(docs);
+    const kindlessDocs = docs.replace(/\*\*Kind[^\n]+/g, '');
+    newDocs +=
+      // '\n\n---\n\n' +
+      '\n\n' +
+      `${headerLevel}## [./${relativePath}](./${relativePath})\n\n` +
+      kindlessDocs;
+
+    newToc += `\n${indent}- [${nextPath}](#${relativePath
+      .split(' ')
+      .join('')
+      .split('.')
+      .join('')
+      .split('/')
+      .join('')})`;
+  }
+};
+
+appendToDocs(SOURCE_DIR).then((_) => {
+  const oldReadme = fs.existsSync(DOCS_PATH)
+    ? fs.readFileSync(DOCS_PATH, 'utf-8')
+    : '';
+
+  const tocRegex = /(<!--[ \t]*BEGIN TOC[ \t]*-->)([\s\S]*)(<!--[ \t]*END TOC[ \t]*-->)/;
+  const tocReplacer = `<!-- BEGIN TOC -->${newToc}\n\n<!-- END TOC -->`;
+  const tocedReadme = oldReadme.match(tocRegex)
+    ? oldReadme.replace(tocRegex, tocReplacer)
+    : `${tocReplacer}\n\n${oldReadme}`;
+
+  const treeRegex = /(<!--[ \t]*BEGIN TREE[ \t]*-->)([\s\S]*)(<!--[ \t]*END TREE[ \t]*-->)/;
+  const treeReplacer = `<!-- BEGIN TREE -->\n\n![dependency graph](./dependency-graph.svg)\n\n<!-- END TREE -->`;
+  const treedReadme = tocedReadme.match(treeRegex)
+    ? tocedReadme.replace(treeRegex, treeReplacer)
+    : `${treeReplacer}\n\n${tocedReadme}`;
+
+  const titleRegex = /(<!--[ \t]*BEGIN TITLE[ \t]*-->)([\s\S]*)(<!--[ \t]*END TITLE[ \t]*-->)/;
+  const titleReplacer = `<!-- BEGIN TITLE -->\n# ${TITLE}\n\n<!-- END TITLE -->`;
+  const titledReadme = treedReadme.match(titleRegex)
+    ? treedReadme.replace(titleRegex, titleReplacer)
+    : `${titleReplacer}\n\n${treedReadme}`;
+
+  const docsRegex = /(<!--[ \t]*BEGIN DOCS[ \t]*-->)([\s\S]*)(<!--[ \t]*END DOCS[ \t]*-->)/;
+  const docsReplacer = `<!-- BEGIN DOCS -->${newDocs}\n\n<!-- END DOCS -->`;
+  const newDocsDocument = titledReadme.match(docsRegex)
+    ? titledReadme.replace(docsRegex, docsReplacer)
+    : `${titledReadme}\n\n${docsReplacer}`;
+
+  let formattedDocs = newDocsDocument;
+  try {
+    formattedDocs = prettier.format(formattedDocs, {
+      parser: 'markdown',
+    });
+  } catch (o_0) {}
+
+  fs.writeFileSync(DOCS_PATH, formattedDocs, 'utf-8');
+});
