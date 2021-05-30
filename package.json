@@ -2,7 +2,7 @@
   "name": "practice-code-review",
   "version": "1.0.0",
   "scripts": {
-    "tree": "depcruise --include-only \"^src\" --output-type dot src | graphviz -Tsvg -odocs/dependency-graph.svg",
+    "tree": "depcruise --prefix ../ --include-only \"^src\" --output-type dot src | graphviz -Tsvg -odocs/dependency-graph.svg",
     "document": "node ./dev-scripts/document.js && npm run tree",
     "test": "node ./dev-scripts/test.js",
     "lint": "node ./dev-scripts/lint.js",

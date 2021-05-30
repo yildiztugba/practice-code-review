@@ -27,7 +27,7 @@
 <!-- src/sort&#45;numbers/example&#45;built&#45;in&#45;sort/sandbox.js -->
 <g id="node1" class="node">
 <title>src/sort&#45;numbers/example&#45;built&#45;in&#45;sort/sandbox.js</title>
-<g id="a_node1"><a xlink:href="src/sort-numbers/example-built-in-sort/sandbox.js" xlink:title="sandbox.js">
+<g id="a_node1"><a xlink:href="../src/sort-numbers/example-built-in-sort/sandbox.js" xlink:title="sandbox.js">
 <path fill="#ffffcc" stroke="black" d="M105.07,-81.3C105.07,-81.3 58.44,-81.3 58.44,-81.3 55.34,-81.3 52.24,-78.2 52.24,-75.1 52.24,-75.1 52.24,-68.9 52.24,-68.9 52.24,-65.8 55.34,-62.7 58.44,-62.7 58.44,-62.7 105.07,-62.7 105.07,-62.7 108.17,-62.7 111.27,-65.8 111.27,-68.9 111.27,-68.9 111.27,-75.1 111.27,-75.1 111.27,-78.2 108.17,-81.3 105.07,-81.3"/>
 <text text-anchor="middle" x="81.75" y="-69.3" font-family="Helvetica,sans-Serif" font-size="9.00">sandbox.js</text>
 </a>
@@ -36,7 +36,7 @@
 <!-- src/sort&#45;numbers/example&#45;built&#45;in&#45;sort/sort&#45;numbers.js -->
 <g id="node2" class="node">
 <title>src/sort&#45;numbers/example&#45;built&#45;in&#45;sort/sort&#45;numbers.js</title>
-<g id="a_node2"><a xlink:href="src/sort-numbers/example-built-in-sort/sort-numbers.js" xlink:title="sort&#45;numbers.js">
+<g id="a_node2"><a xlink:href="../src/sort-numbers/example-built-in-sort/sort-numbers.js" xlink:title="sort&#45;numbers.js">
 <path fill="#ffffcc" stroke="black" d="M216.3,-65.3C216.3,-65.3 150.71,-65.3 150.71,-65.3 147.61,-65.3 144.51,-62.2 144.51,-59.1 144.51,-59.1 144.51,-52.9 144.51,-52.9 144.51,-49.8 147.61,-46.7 150.71,-46.7 150.71,-46.7 216.3,-46.7 216.3,-46.7 219.4,-46.7 222.51,-49.8 222.51,-52.9 222.51,-52.9 222.51,-59.1 222.51,-59.1 222.51,-62.2 219.4,-65.3 216.3,-65.3"/>
 <text text-anchor="middle" x="183.51" y="-53.3" font-family="Helvetica,sans-Serif" font-size="9.00">sort&#45;numbers.js</text>
 </a>
@@ -51,7 +51,7 @@
 <!-- src/sort&#45;numbers/example&#45;built&#45;in&#45;sort/sort&#45;numbers.spec.js -->
 <g id="node3" class="node">
 <title>src/sort&#45;numbers/example&#45;built&#45;in&#45;sort/sort&#45;numbers.spec.js</title>
-<g id="a_node3"><a xlink:href="src/sort-numbers/example-built-in-sort/sort-numbers.spec.js" xlink:title="sort&#45;numbers.spec.js">
+<g id="a_node3"><a xlink:href="../src/sort-numbers/example-built-in-sort/sort-numbers.spec.js" xlink:title="sort&#45;numbers.spec.js">
 <path fill="#ffffcc" stroke="black" d="M125.06,-50.3C125.06,-50.3 38.45,-50.3 38.45,-50.3 35.35,-50.3 32.25,-47.2 32.25,-44.1 32.25,-44.1 32.25,-37.9 32.25,-37.9 32.25,-34.8 35.35,-31.7 38.45,-31.7 38.45,-31.7 125.06,-31.7 125.06,-31.7 128.16,-31.7 131.26,-34.8 131.26,-37.9 131.26,-37.9 131.26,-44.1 131.26,-44.1 131.26,-47.2 128.16,-50.3 125.06,-50.3"/>
 <text text-anchor="middle" x="81.75" y="-38.3" font-family="Helvetica,sans-Serif" font-size="9.00">sort&#45;numbers.spec.js</text>
 </a>
