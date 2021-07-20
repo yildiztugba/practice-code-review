@@ -77,7 +77,16 @@
     ],
     "camelcase": [2, { "properties": "never" }],
 
-    "prettier/prettier": ["error"],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "all",
+        "tabWidth": 2,
+        "semi": true,
+        "bracketSpacing": true,
+        "singleQuotes": true
+      }
+    ],
 
     "prefer-arrow/prefer-arrow-functions": ["warn"],
 
