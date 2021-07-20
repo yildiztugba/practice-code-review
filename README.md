@@ -213,7 +213,7 @@ The `npm run document` script in this repository uses [jsdoc-to-markdown](https:
 #### Formatting
 
 <details>
-<summary><code>$ npm run format -- path/to/file.js</code></summary>
+<summary><code>$ npm run format</code></summary>
 <br>
 
 Formatting doesn't change your code's behavior but it sure makes your code easier to read. It's hard enough to read your own code, now imaging trying to read everyone's different code!
@@ -241,7 +241,7 @@ The `npm run lint` script uses [ESLint Node.js API](https://eslint.org/docs/deve
 #### Testing
 
 <details>
-<summary><code>$ npm run test -- path/to/file.js</code></summary>
+<summary><code>$ npm run test -- path/to/file.spec.js</code></summary>
 <br>
 
 You've already practiced with tests in the last weeks, unit tests in this repository will be exactly the same - `describe`, `it` and `expect(_).toEqual(_)`. The main difference is that your tests and your function will be in two different files:
