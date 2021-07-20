@@ -61,9 +61,9 @@ You could use this array to sort items in a shopping application from least to m
 
 ```js
 const allProducts = [
-  { name: "teddy bear", price: 3 },
-  { name: "milk", price: 1 },
-  { name: "light bulb", price: 2 },
+  { name: 'teddy bear', price: 3 },
+  { name: 'milk', price: 1 },
+  { name: 'light bulb', price: 2 },
 ];
 const prices = allProducts.map((product) => product.price);
 const sortedPrices = sortNumbers(prices);

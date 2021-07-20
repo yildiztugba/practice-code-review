@@ -6,6 +6,8 @@
 
 <!-- BEGIN TREE -->
 
+> [interactive graph](./dependency-graph.html)
+
 ![dependency graph](./dependency-graph.svg)
 
 <!-- END TREE -->
@@ -20,17 +22,15 @@
     - [sort-numbers.js](#srcsort-numbersexample-built-in-sortsort-numbersjs)
 - split-object
 
+---
+
 <!-- END TOC -->
+
+---
 
 <!-- BEGIN DOCS -->
 
----
-
 # /deep-flat
-
----
-
-[TOP](#DOCS)
 
 ---
 
@@ -38,25 +38,15 @@
 
 ---
 
-[TOP](#DOCS)
-
----
-
 # /intersection
-
----
-
-[TOP](#DOCS)
 
 ---
 
 # /sort-numbers
 
----
-
 ## /example-built-in-sort
 
-<details><summary><a href="../src/sort-numbers/example-built-in-sort/sort-numbers.js" id="srcsort-numbersexample-built-in-sortsort-numbersjs">src/sort-numbers/example-built-in-sort/sort-numbers.js</a></summary>
+<details><summary><a href="../../src/sort-numbers/example-built-in-sort/sort-numbers.js" id="srcsort-numbersexample-built-in-sortsort-numbersjs">../src/sort-numbers/example-built-in-sort/sort-numbers.js</a></summary>
 
 <a name="sortNumbers"></a>
 
@@ -92,18 +82,10 @@ sortNumbers([-1, 0, 1]);
 
 ---
 
-[TOP](#DOCS)
-
----
-
-[TOP](#DOCS)
-
 ---
 
 # /split-object
 
 ---
-
-[TOP](#DOCS)
 
 <!-- END DOCS -->

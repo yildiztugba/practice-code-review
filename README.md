@@ -10,7 +10,9 @@ Before jumping into group projects using JS, take some time to learn about _code
   - [Repo Setup](#repo-setup)
   - [Local Setup](#local-setup)
   - [Developing Your Solutions](#developing-your-solution)
-  - [Code Quality Automation](#code-quality-automation)
+- [Code Quality Automation](#code-quality-automation)
+  - [`npm` scripts](#npm-scripts)
+  - [Continuous Integration](#continuous-integration)
 
 ---
 
@@ -147,7 +149,11 @@ This checklist is very long to help you learn what's important when reviewing co
 Not much to do, you aren't building a web page so there is no need for boilerplate code or GitHub pages. All that matters is:
 
 - Everyone in your group is a contributor with _write_ access in the group repo
-- The repository [requires a review](https://github.blog/2018-03-23-require-multiple-reviewers/) before pull requests can be merged.
+- in the _Branches_ section of your repo's settings make sure:
+  - The repository [requires a review](https://github.blog/2018-03-23-require-multiple-reviewers/) before pull requests can be merged.
+  - The `master`/`main` branch must "_Require status checks to pass before merging_"
+  - The `master`/`main` branch must "_Require require branches to be up to date before merging_"
+- In the _Actions_ section of your repository settings _Allow all actions_ so the automated checks will run each time you send a PR to `master`/`main`
 
 ---
 
@@ -184,9 +190,11 @@ You can write, run and test your code in Node.js or the browser. Whichever you p
 
 Writing code is hard. To write even just 10 lines there are 100 things you need to think about, and 1000 mistakes you can make. Developers are clever and lazy people. They have built tools to help with all of this.
 
+### NPM Scripts
+
 This repository's [package.json](./package.json) has 4 scripts to help write the cleanest code you can:
 
-### Documenting
+#### Documenting
 
 <details>
 <summary><code>$ npm run document -- path/to/file.js</code></summary>
@@ -196,13 +204,13 @@ Documentation is very important for a project, it's how others know what code is
 
 Imagine you spend an hour documenting a few functions in your README, and then your colleague changes the code! Either you documentation will be wrong, or you'll need to spend a bunch more time fixing the documentation. To avoid this, developers have built tools that will automatically create documentation based on the JSDoc comments in your JavaScript files.
 
-The [documentation script](./dev-scripts.document.js) in this repository uses [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown/), [regular expressions](https://regexr.com/) and the Node.js [file system module](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html) to generate the documentation in your solution READMEs.
+The `npm run document` script in this repository uses [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown/), [regular expressions](https://regexr.com/) and the Node.js [file system module](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html) to generate the documentation in your solution READMEs.
 
 - PS. check out [lodash](https://lodash.com/docs) to see some great documentation
 
 </details>
 
-### Formatting
+#### Formatting
 
 <details>
 <summary><code>$ npm run format -- path/to/file.js</code></summary>
@@ -212,11 +220,11 @@ Formatting doesn't change your code's behavior but it sure makes your code easie
 
 Automated formatting helps everyone in your project write their code with the same style so that reading your own code is the same as reading some else's.
 
-The [formatting script](./dev-scripts/format.js) in this repository uses [Prettier](https://prettier.io/) and a [local configuration file](./.prettier.json) to format the code in your .js (and .md) files.
+The `npm run format` script in this repository uses [Prettier](https://prettier.io/) and a [local configuration file](./.prettier.json) to format the code in your .js (and .md) files.
 
 </details>
 
-### Linting
+#### Linting
 
 <details>
 <summary><code>$ npm run lint -- path/to/file.js</code></summary>
@@ -224,13 +232,13 @@ The [formatting script](./dev-scripts/format.js) in this repository uses [Pretti
 
 Linting is a type of **static code analysis** - that means it checks your code for mistakes _without running it_. Kind of like when you read your code to look for mistakes, but automated.
 
-The linting configuration in this repository is strict There is a lot of code you have read and written in the last weeks that would not be allowed. This is hard to get used to at first. But once you get used to this you will find it helpful for writing consistently clean code, and avoiding easy mistakes.
+The linting configuration in this repository is strict. There is a lot of code you have read and written in the last weeks that would not be allowed. This is hard to get used to at first. But once you get used to this you will find strict conventions are helpful for writing consistent code, avoiding easy mistakes, and collaborating on a code base.
 
-The [linting script](./dev-scripts/lint.js) uses [ESLint Node.js API](https://eslint.org/docs/developer-guide/nodejs-api), [eslint-plugin-jsdoc-rules](https://github.com/Extersky/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules), [eslint-plugin-spellcheck](https://github.com/aotaduy/eslint-plugin-spellcheck) and a [local configuration file](./.eslintrc.json) to check your .js files for possible mistakes, bad practices, and consistent style.
+The `npm run lint` script uses [ESLint Node.js API](https://eslint.org/docs/developer-guide/nodejs-api), [eslint-plugin-jsdoc-rules](https://github.com/Extersky/eslint-plugin-jsdoc#eslint-plugin-jsdoc-rules), [eslint-plugin-spellcheck](https://github.com/aotaduy/eslint-plugin-spellcheck) and a [local configuration file](./.eslintrc.json) to check your .js files for possible mistakes, bad practices, and consistent style.
 
 </details>
 
-### Testing
+#### Testing
 
 <details>
 <summary><code>$ npm run test -- path/to/file.js</code></summary>
@@ -241,6 +249,32 @@ You've already practiced with tests in the last weeks, unit tests in this reposi
 - `solution-name.js`: this file `export`s your function
 - `solution-name.spec.js`: this file `import`s your function for testing
 
-The [testing script](./dev-scripts/test.js) uses the [expect library](https://www.npmjs.com/package/expect) from [Jest](https://jestjs.io/) and a [custom reporter](./dev-scripts/describe-it.js) to capture your test results and format them for the `.test-pass.txt` file.
+The `npm run test` script uses [Jest](https://jestjs.io/) to run your tests and report the results.
 
 </details>
+
+### Continuous Integration
+
+For now you can think of _Continuous Integration_ is a fancy way to say "automatically check your code before you merge". This repository has 3 CI scripts to help your group maintain a quality and consistent code base. If any of the scripts encounter a mistake you will not be able to merge.
+
+_hint: remember to [enable GitHub Actions](https://docs.github.com/en/github/administering-a-repository/managing-repository-settings/disabling-or-limiting-github-actions-for-a-repository) in your repository!_
+
+#### [document.yml](./.github/workflows/document.yml)
+
+> `npm run document` locally to check if this action will pass
+
+This action will rebuild the documentation for your code each time someone sends a PR to or pushes to `main`/`master`. Using this action means that the documentation in your GitHub repository will always describe the code that is _actually_ on the master branch, not the code from 2 days ago.
+
+#### [lint.yml](./.github/workflows/lint.yml)
+
+> `npm run lint -- ./src` locally to check if this action will pass
+
+This action will run a linting check on the `./src` folder each time someone sends a PR to or pushes to `main`/`master`. All of the linting checks must pass _before_ you are allowed to merge changes.
+
+Don't forget to use `npm run format` before pushing! The linter will also check your code's formatting.
+
+#### [test.yml](./.github/workflows/test.yml)
+
+> `npm run test -- ./src` locally to check if this action will pass
+
+This action will run all of the `.spec.js` tests in the `./src` folder each time someone sends a PR to or pushes to `main`/`master`. All of the linting tests must pass _before_ you are allowed to merge changes.

@@ -1,3 +1,7 @@
 import { solutionName } from './solution-name.js';
 
-describe('', () => {});
+describe('', () => {
+  it('', () => {
+    expect(true).toEqual(true);
+  });
+});
