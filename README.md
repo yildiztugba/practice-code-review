@@ -197,7 +197,7 @@ This repository's [package.json](./package.json) has 4 scripts to help write the
 #### Documenting
 
 <details>
-<summary><code>$ npm run document -- path/to/file.js</code></summary>
+<summary><code>$ npm run document</code></summary>
 <br>
 
 Documentation is very important for a project, it's how others know what code is in your repo and how it works. But writing documentation by hand takes a lot of time and is easy to mess up.
