@@ -1,40 +1,6 @@
 # Sort Numbers: use a built-in array method
 
-<!-- BEGIN DOCS -->
-
-<a name="sortNumbers"></a>
-
-## sortNumbers ⇒ <code>Array.&lt;number&gt;</code>
-
-Sorts an array of numbers from smallest to largest.
-
-Returns a new array without modifying the original array.
-
-Does not need to support: NaN, Infinity, -Infinity.
-
-**Returns**: <code>Array.&lt;number&gt;</code> - A new array with the same numbers, but sorted.
-
-| Param          | Type                              | Default         | Description                   |
-| -------------- | --------------------------------- | --------------- | ----------------------------- |
-| [arrOfNumbers] | <code>Array.&lt;number&gt;</code> | <code>[]</code> | The array of numbers to sort. |
-
-**Example**
-
-```js
-sortNumbers([1.5, 1, -1.5, 0, -1]);
-// -> [-1.5, -1, 0, 1, 1.5]
-```
-
-**Example**
-
-```js
-sortNumbers([-1, 0, 1]);
-// -> [-1, 0, 1]
-```
-
-> Docs generated: Wed May 05 2021, 9:43:33 AM
-
-<!-- END DOCS -->
+Takes in an array of numbers and returns a new array with the same numbers sorted from smallest to largest.
 
 ---
 

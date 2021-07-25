@@ -5,10 +5,9 @@
       "type": "node",
       "request": "launch",
       "name": "current spec file",
-      "program": "${workspaceFolder}/dev-scripts/test.js",
-      "args": ["${relativeFile}"],
+      "args": ["run", "test", "--", "${file}"],
+      "runtimeExecutable": "npm",
       "internalConsoleOptions": "openOnSessionStart",
-      "console": "integratedTerminal",
       "skipFiles": ["<node_internals>/**"]
     }
   ]

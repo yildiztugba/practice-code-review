@@ -42,7 +42,7 @@ As usual, it's more important to write great solutions to easy problems than to 
 <br>
 
 - **`/README.md`**:
-  - **Docs**: The docs in your solution's README are generated automatically by the `npm run document -- path/to/solution-name.js` script. That script will read the JSDoc comment in your solution's file and render it into Markdown.
+  - **Challenge Description**: A short description of the challenge.
   - **Strategy**: Describe the strategy you used to solve this challenge. Why did you choose this strategy? What did you learn from using this strategy?
   - **Implementation**: Describe your implementation. How did you implement your solution? What language features did you use and why?
   - **Use Cases**: Include one or two use cases for how your function could be helpful in the real world.
