@@ -47,7 +47,7 @@ Before the reviewer merges this PR to main/master, all of these boxes must be ch
   - [ ] There is no logic (loops, conditionals, ...) in the test cases
   - [ ] Side-effects are tested, if necessary
   - [ ] Tests were run just before pushing
-  - [ ] All tests pass (`file-name.pass.txt`)
+  - [ ] All tests pass
   - [ ] Tricky edge cases are tested (extra credit)
 
 ## Strategy
@@ -72,7 +72,7 @@ Before the reviewer merges this PR to main/master, all of these boxes must be ch
   - [ ] The code was formatted just before pushing
   - [ ] No errors occurred while formatting the code
 - **Linting**
-  - [ ] There should be no linting errors or warnings in the `file-name.lint.txt` file
+  - [ ] There should be no linting errors or warnings
   - [ ] Spelling should be correct in all code, comments and docstrings
   - [ ] The code was linted just before pushing
 - **The solution file**
