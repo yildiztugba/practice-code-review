@@ -14,23 +14,49 @@ arrayOfSameValues([4, 5, 5, 6, 7],[2, 4, 5, 7]) -> [4, 5, 7]
 
 **firstArray[]**: `array`
 
-- l
+- array of values
   
 **secondArray[]**: `array`
 
-- l
+- array of values
 
 ### Return Value: `array`
 
-- l
+- array of same values in both first and second array
 
 ---
 
+## Test Cases
+
+minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+
+minMax([2334454, 5]) ➞ [5, 2334454]
+
+minMax([1]) ➞ [1, 1]
+
+```js
+describe('Basic Tests', () => {
+  Test.assertEquals(minMax([1, 2, 3, 4, 5])), [1, 5]);
+  Test.assertEquals(minMax([2334454, 5]), [5, 2334454]);
+  Test.assertEquals(minMax([1], [1, 1]);
+});
+```
+
 ## Strategy
+
+- create new array for keeping same values for in both first and second array
+- take each value of first array for comparison.
+- check if second array includes values of first array and if new array doesn't have values
+- if condition is right, keep values in new array
 
 ---
 
 ## Implementation
+
+- use for-each method for taking each value of first array.
+- check same values in both first and second array with if condition and using include method
+- check if there is a possibility for a repeated value with include method.
+- if condition is true, push values to new array.
 
 ---
 
