@@ -1,4 +1,4 @@
-import { solutionName } from './solutionDotEntries.js';
+import { solutionName } from './solution-dot-entries.js';
 
 describe('', () => {
   it('', () => {
