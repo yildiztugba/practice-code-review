@@ -1,15 +1,17 @@
-import { solutionName } from "./solution-dot-entries.js";
+import { objectSplitter } from './solution-dot-entries.js';
 
-/*
-import { solutionName } from './solutionDotEntries.js';
-
-export const solutionName = (solutionDotEntries = []) => {
-    return solutionDotEntries.entries();
-};
-*/
 const slipknot = {
-Album1999: 'Slipknot',
-Album2001: 'Iowa',
+  Album1999: 'Slipknot',
+  Album2001: 'Iowa',
 };
 
-console.log(Object.entries(slipknot));
+// Tested and success in Study Lenses
+console.log(objectSplitter(slipknot));
+
+const objStrings1 = {
+  a: 'Du',
+  b: 'Du Hast',
+  c: 'Du Hast Mich',
+};
+// Tested and success in Study Lenses
+console.log(objectSplitter(objStrings1));
