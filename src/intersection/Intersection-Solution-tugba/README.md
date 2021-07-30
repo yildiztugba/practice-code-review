@@ -1,14 +1,14 @@
 # Intersection : strategy name
 
- The function write a new array of values that contains two arrays.
+ The function will return a new array of values that contains both two given arrays.
 
-arrayOfSameValues([1, 2, 3, 4, 5],[1, 5]) -> [1, 5]
+intersection([1, 2, 3, 4, 5],[1, 5]) -> [1, 5]
 
-arrayOfSameValues([4, 5, 5, 6, 7],[2, 4, 5, 7]) -> [4, 5, 7]
+intersection([4, 5, 5, 6, 7],[2, 4, 5, 7]) -> [4, 5, 7]
 
 ## Syntax
 
-> arrayOfSameValues(firstArray[], secondArray[]) -> []
+> intersection(firstArray[], secondArray[]) -> []
 
 ### Parameters
 
