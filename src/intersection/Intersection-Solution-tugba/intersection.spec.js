@@ -25,7 +25,7 @@ describe('Test 3: Null', () => {
     expect(intersection([], [])).toEqual([]);
   });
 });
-describe('Test 4: undefined', () => {
+describe('Test 4: Undefined', () => {
   it('Number & undefined: [23,44,7,10,0], undefined => []', () => {
     expect(intersection([23, 44, 7, 10, 0], undefined)).toEqual([]);
   });
@@ -51,7 +51,7 @@ describe('Test 5: Mix Type', () => {
   });
 });
 
-describe('Test 2: Repetition', () => {
+describe('Test 6: Repetition', () => {
   it('[1,1,3,5,6],[1,3,3,6] => [1,3,6]', () => {
     expect(intersection([1, 1, 3, 5, 6], [1, 3, 3, 6])).toEqual([1, 3, 6]);
   });

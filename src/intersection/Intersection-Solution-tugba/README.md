@@ -1,6 +1,6 @@
 # Intersection : strategy name
 
-The function will return a new array of values that contains both two given arrays.
+The function will return a new array of values that finds intersection of firstArray and secondArray
 
 intersection([1, 2, 3, 4, 5],[1, 5]) -> [1, 5]
 
@@ -14,11 +14,11 @@ intersection([4, 5, 5, 6, 7],[2, 4, 5, 7]) -> [4, 5, 7]
 
 **firstArray[]**: `array`
 
-- array of values
+- array of values for comparing and finding intersection of two arrays
 
 **secondArray[]**: `array`
 
-- array of values
+- array of values for comparing and finding intersection of two arrays
 
 ### Return Value: `array`
 
@@ -62,13 +62,26 @@ describe('Basic Tests', () => {
 
 ## Use Cases
 
-- the function can be used in any program to find intersection of any two arrays.
+- the function can be used for finding meeting time slots where two person are available.
+
+```js
+ const FindCommonTimeSlots = (FirstPersonTimeSlots = [], SecondPersonTimeSlots = []) => {
+  const timeSlots = [];
+
+  FirstPerson.forEach((value) => {
+    if (FirstPersonTimeSlots.includes(value) && !timeSlots.includes(value))
+      timeSlots.push(value);
+  });
+
+  return timeSlots;
+};
+];
+```
+
 ---
 
 ## Inspiration
 
-<!--
-  was there any code, blog post, video, ... that inspired your solution?
-  there's nothing wrong with adapting other people's code, just give them credit!
-  and say how it inspired your solution.
--->
+- i inspired this website: https://stackoverflow.com/questions/34425237/algorithm-to-find-meeting-time-slots-where-all-participants-are-available/34426166
+
+- the writer wants to find meeting time slots where all participants are available. I got his idea with little changes. It is a good use case for the function.
