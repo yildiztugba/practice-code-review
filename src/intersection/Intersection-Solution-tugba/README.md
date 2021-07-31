@@ -28,17 +28,17 @@ intersection([4, 5, 5, 6, 7],[2, 4, 5, 7]) -> [4, 5, 7]
 
 ## Test Cases
 
-minMax([1, 2, 3, 4, 5]) ➞ [1, 5]
+intersection(['john', 'jimmy', 'jack'], ['jimmy', 'jason']) ➞ ['jimmy'])
 
-minMax([2334454, 5]) ➞ [5, 2334454]
+intersection([23, 44, 7, 10, 0], undefined) ➞ []
 
-minMax([1]) ➞ [1, 1]
+intersection([23, 44, 7, 10, 0], [null]) ➞ []
 
 ```js
 describe('Basic Tests', () => {
-  Test.assertEquals(minMax([1, 2, 3, 4, 5])), [1, 5]);
-  Test.assertEquals(minMax([2334454, 5]), [5, 2334454]);
-  Test.assertEquals(minMax([1], [1, 1]);
+  Test.assertEquals(intersection((['john', 'jimmy', 'jack'], ['jimmy', 'jason']), ['jimmy']);
+  Test.assertEquals(intersection(([23, 44, 7, 10, 0], undefined), []);
+  Test.assertEquals(intersection(([23, 44, 7, 10, 0], [null]), []);
 });
 ```
 
@@ -62,6 +62,7 @@ describe('Basic Tests', () => {
 
 ## Use Cases
 
+- the function can be used in any program to find intersection of any two arrays.
 ---
 
 ## Inspiration

@@ -50,3 +50,9 @@ describe('Test 5: Mix Type', () => {
     expect(intersection([23, 44, 7, 10, 0], [])).toEqual([]);
   });
 });
+
+describe('Test 2: Repetition', () => {
+  it('[1,1,3,5,6],[1,3,3,6] => [1,3,6]', () => {
+    expect(intersection([1, 1, 3, 5, 6], [1, 3, 3, 6])).toEqual([1, 3, 6]);
+  });
+});
