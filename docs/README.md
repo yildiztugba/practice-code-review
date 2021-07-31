@@ -16,6 +16,8 @@
 
 - deep-flat
 - difference
+  - arrayDifference
+    - [array-difference.js](#srcdifferencearrayDifferencearray-differencejs)
 - intersection
 - sort-numbers
   - example-built-in-sort
@@ -35,6 +37,34 @@
 ---
 
 # /difference
+
+## /arrayDifference
+
+<details><summary><a href="../../src/difference/arrayDifference/array-difference.js" id="srcdifferencearrayDifferencearray-differencejs">../src/difference/arrayDifference/array-difference.js</a></summary>
+
+<a name="arrayDifference"></a>
+
+## arrayDifference ⇒ <code>Array.&lt;Array&gt;</code>
+
+Compares the items in the firstArray against the the secondArray and returns the values which are in the firstArray but not in the secondArray.
+
+**Returns**: <code>Array.&lt;Array&gt;</code> - [newArray=[]] - The new array that embraces items(difference) which are found in
+the first array but not in the second to be compared.
+
+| Param         | Type                             | Default         | Description                               |
+| ------------- | -------------------------------- | --------------- | ----------------------------------------- |
+| [firstArray]  | <code>Array.&lt;Array&gt;</code> | <code>[]</code> | The first array of items to be compared.  |
+| [secondArray] | <code>Array.&lt;Array&gt;</code> | <code>[]</code> | The second array of items to be compared. |
+
+**Example**
+
+```js
+arrayDifference([1, 2, 3, 4][(1, 3, 4, 5)]); // [2]
+```
+
+</details>
+
+---
 
 ---
 
