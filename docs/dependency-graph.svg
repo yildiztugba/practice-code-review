@@ -20,9 +20,9 @@
 <text text-anchor="middle" x="127.25" y="-187.9" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">intersection</text>
 </g>
 <g id="clust3" class="cluster">
-<title>cluster_src/intersection/intersection&#45;solution&#45;tugba</title>
+<title>cluster_src/intersection/Intersection&#45;Solution&#45;tugba</title>
 <path fill="#ffffff" stroke="black" stroke-width="2" d="M39.5,-120C39.5,-120 215.01,-120 215.01,-120 221.01,-120 227.01,-126 227.01,-132 227.01,-132 227.01,-161 227.01,-161 227.01,-167 221.01,-173 215.01,-173 215.01,-173 39.5,-173 39.5,-173 33.5,-173 27.5,-167 27.5,-161 27.5,-161 27.5,-132 27.5,-132 27.5,-126 33.5,-120 39.5,-120"/>
-<text text-anchor="middle" x="127.25" y="-160.9" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">intersection&#45;solution&#45;tugba</text>
+<text text-anchor="middle" x="127.25" y="-160.9" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">Intersection&#45;Solution&#45;tugba</text>
 </g>
 <g id="clust4" class="cluster">
 <title>cluster_src/sort&#45;numbers</title>
@@ -34,27 +34,27 @@
 <path fill="#ffffff" stroke="black" stroke-width="2" d="M36,-24C36,-24 218.51,-24 218.51,-24 224.51,-24 230.51,-30 230.51,-36 230.51,-36 230.51,-65 230.51,-65 230.51,-71 224.51,-77 218.51,-77 218.51,-77 36,-77 36,-77 30,-77 24,-71 24,-65 24,-65 24,-36 24,-36 24,-30 30,-24 36,-24"/>
 <text text-anchor="middle" x="127.25" y="-64.9" font-family="Helvetica,sans-Serif" font-weight="bold" font-size="9.00">example&#45;built&#45;in&#45;sort</text>
 </g>
-<!-- src/intersection/intersection&#45;solution&#45;tugba/intersection.js -->
+<!-- src/intersection/Intersection&#45;Solution&#45;tugba/intersection.js -->
 <g id="node1" class="node">
-<title>src/intersection/intersection&#45;solution&#45;tugba/intersection.js</title>
-<g id="a_node1"><a xlink:href="../src/intersection/intersection-solution-tugba/intersection.js" xlink:title="intersection.js">
+<title>src/intersection/Intersection&#45;Solution&#45;tugba/intersection.js</title>
+<g id="a_node1"><a xlink:href="../src/intersection/Intersection-Solution-tugba/intersection.js" xlink:title="intersection.js">
 <path fill="#ffffcc" stroke="black" d="M212.81,-146.3C212.81,-146.3 154.2,-146.3 154.2,-146.3 151.1,-146.3 148,-143.2 148,-140.1 148,-140.1 148,-133.9 148,-133.9 148,-130.8 151.1,-127.7 154.2,-127.7 154.2,-127.7 212.81,-127.7 212.81,-127.7 215.91,-127.7 219.01,-130.8 219.01,-133.9 219.01,-133.9 219.01,-140.1 219.01,-140.1 219.01,-143.2 215.91,-146.3 212.81,-146.3"/>
 <text text-anchor="middle" x="183.51" y="-134.3" font-family="Helvetica,sans-Serif" font-size="9.00">intersection.js</text>
 </a>
 </g>
 </g>
-<!-- src/intersection/intersection&#45;solution&#45;tugba/intersection.spec.js -->
+<!-- src/intersection/Intersection&#45;Solution&#45;tugba/intersection.spec.js -->
 <g id="node2" class="node">
-<title>src/intersection/intersection&#45;solution&#45;tugba/intersection.spec.js</title>
-<g id="a_node2"><a xlink:href="../src/intersection/intersection-solution-tugba/intersection.spec.js" xlink:title="intersection.spec.js">
+<title>src/intersection/Intersection&#45;Solution&#45;tugba/intersection.spec.js</title>
+<g id="a_node2"><a xlink:href="../src/intersection/Intersection-Solution-tugba/intersection.spec.js" xlink:title="intersection.spec.js">
 <path fill="#ffffcc" stroke="black" d="M121.57,-146.3C121.57,-146.3 41.94,-146.3 41.94,-146.3 38.84,-146.3 35.74,-143.2 35.74,-140.1 35.74,-140.1 35.74,-133.9 35.74,-133.9 35.74,-130.8 38.84,-127.7 41.94,-127.7 41.94,-127.7 121.57,-127.7 121.57,-127.7 124.67,-127.7 127.77,-130.8 127.77,-133.9 127.77,-133.9 127.77,-140.1 127.77,-140.1 127.77,-143.2 124.67,-146.3 121.57,-146.3"/>
 <text text-anchor="middle" x="81.75" y="-134.3" font-family="Helvetica,sans-Serif" font-size="9.00">intersection.spec.js</text>
 </a>
 </g>
 </g>
-<!-- src/intersection/intersection&#45;solution&#45;tugba/intersection.spec.js&#45;&gt;src/intersection/intersection&#45;solution&#45;tugba/intersection.js -->
+<!-- src/intersection/Intersection&#45;Solution&#45;tugba/intersection.spec.js&#45;&gt;src/intersection/Intersection&#45;Solution&#45;tugba/intersection.js -->
 <g id="edge1" class="edge">
-<title>src/intersection/intersection&#45;solution&#45;tugba/intersection.spec.js&#45;&gt;src/intersection/intersection&#45;solution&#45;tugba/intersection.js</title>
+<title>src/intersection/Intersection&#45;Solution&#45;tugba/intersection.spec.js&#45;&gt;src/intersection/Intersection&#45;Solution&#45;tugba/intersection.js</title>
 <path fill="none" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" d="M127.96,-137C132.57,-137 137.23,-137 141.78,-137"/>
 <polygon fill="#000000" fill-opacity="0.200000" stroke="#000000" stroke-width="2" stroke-opacity="0.200000" points="141.91,-139.1 147.91,-137 141.91,-134.9 141.91,-139.1"/>
 </g>
