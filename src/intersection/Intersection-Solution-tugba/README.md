@@ -1,4 +1,4 @@
-# Intersection : strategy name
+# Intersection : For-each
 
 The function will return a new array of values that finds intersection of firstArray and secondArray
 
