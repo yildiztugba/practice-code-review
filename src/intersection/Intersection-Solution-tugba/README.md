@@ -1,6 +1,6 @@
 # Intersection : strategy name
 
- The function will return a new array of values that contains both two given arrays.
+The function will return a new array of values that contains both two given arrays.
 
 intersection([1, 2, 3, 4, 5],[1, 5]) -> [1, 5]
 
@@ -15,7 +15,7 @@ intersection([4, 5, 5, 6, 7],[2, 4, 5, 7]) -> [4, 5, 7]
 **firstArray[]**: `array`
 
 - array of values
-  
+
 **secondArray[]**: `array`
 
 - array of values
