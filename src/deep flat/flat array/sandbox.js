@@ -1,7 +1,7 @@
-import { solutionName } from './solution-name.js';
+import { flattenedArray } from './flattenedArray.js';
 
 console.log(
-  solutionName([
+  flattenedArray([
     [1, 2],
     [5, 3],
   ]),

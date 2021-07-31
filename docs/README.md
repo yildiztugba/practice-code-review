@@ -14,9 +14,9 @@
 
 <!-- BEGIN TOC -->
 
-- deep-flat
-  - flat-array
-    - [solution-name.js](#srcdeep-flatflat-arraysolution-namejs)
+- deep flat
+  - flat array
+    - [solution-name.js](#srcdeepflatflatarraysolution-namejs)
 - difference
 - intersection
 - sort-numbers
@@ -32,20 +32,23 @@
 
 <!-- BEGIN DOCS -->
 
-# /deep-flat
+# /deep flat
 
-## /flat-array
+## /flat array
 
-<details><summary><a href="../../src/deep-flat/flat-array/solution-name.js" id="srcdeep-flatflat-arraysolution-namejs">../src/deep-flat/flat-array/solution-name.js</a></summary>
+<details><summary><a href="../../src/deep flat/flat array/solution-name.js" id="srcdeepflatflatarraysolution-namejs">../src/deep flat/flat array/solution-name.js</a></summary>
 
-<a name="flattenArray"></a>
+<a name="flattenedArray"></a>
 
-## flattenArray
+## flattenedArray ⇒ <code>Array</code>
 
-this function changes the given array into flatten array.
+The flattenArray function changes nested array into flatten array.
 
-**Param{array}**: [arr] not flatten array.  
-**Return{array}**: flatten array
+**Returns**: <code>Array</code> - - Returns the new flattened array.
+
+| Param   | Type               | Description           |
+| ------- | ------------------ | --------------------- |
+| [array] | <code>Array</code> | The array to flatten. |
 
 </details>
 

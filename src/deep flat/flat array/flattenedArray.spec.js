@@ -1,4 +1,4 @@
-import { flattenedArray } from './solution-name.js';
+import { flattenedArray } from './flattenedArray.js';
 
 describe('flatten a given array', () => {
   it(' two array => flattened Array', () => {
@@ -18,7 +18,6 @@ describe('flatten a given array', () => {
       ]),
     ).toEqual([1, 3, 4, 9, 2, 5, 4, 8]);
   });
-
   it('to flatten array => flattened Array', () => {
     expect(
       flattenedArray([
