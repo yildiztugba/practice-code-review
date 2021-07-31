@@ -17,6 +17,7 @@ export const solutionName = (obj = {}) => {
   return newArr;
 };
 
+//
 // Second solution
 // const solutionName = (obj = {}) => {
     // creating a new array

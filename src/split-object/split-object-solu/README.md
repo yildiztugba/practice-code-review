@@ -13,6 +13,7 @@ using this strategy i converted and pushed  each entries a new array.
 For this challenge it used  `Object.entries().map()` and `push({[entry[]]: entry[]});` to crea a new array with the objects and keys inside with method `.map` it created a new array, with method `.push` it added all the objects into the new array
 ---
 
+
 ## Use Cases
 
 ---
