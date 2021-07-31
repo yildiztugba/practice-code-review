@@ -17,6 +17,8 @@
 - deep-flat
 - difference
 - intersection
+  - Intersection-Solution-tugba
+    - [intersection.js](#srcintersectionIntersection-Solution-tugbaintersectionjs)
 - sort-numbers
   - example-built-in-sort
     - [sort-numbers.js](#srcsort-numbersexample-built-in-sortsort-numbersjs)
@@ -39,6 +41,39 @@
 ---
 
 # /intersection
+
+## /Intersection-Solution-tugba
+
+<details><summary><a href="../../src/intersection/Intersection-Solution-tugba/intersection.js" id="srcintersectionIntersection-Solution-tugbaintersectionjs">../src/intersection/Intersection-Solution-tugba/intersection.js</a></summary>
+
+<a name="intersection"></a>
+
+## intersection ⇒ <code>Array.&lt;Array&gt;</code>
+
+The function will return a new array of values that contains both two given arrays.
+
+**Returns**: <code>Array.&lt;Array&gt;</code> - Values that contains in both firstArray and secondArray.
+
+- @example
+
+intersection([2, 1], [2, 3]);
+// -> [2]
+
+| Param         | Type                             | Default         | Description               |
+| ------------- | -------------------------------- | --------------- | ------------------------- |
+| [firstArray]  | <code>Array.&lt;Array&gt;</code> | <code>[]</code> | This is the first array.  |
+| [secondArray] | <code>Array.&lt;Array&gt;</code> | <code>[]</code> | This is the second array. |
+
+**Example**
+
+```js
+intersection([2, 1, 2], [2, 3]);
+// -> [2]
+```
+
+</details>
+
+---
 
 ---
 

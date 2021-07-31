@@ -1,6 +1,9 @@
 # Intersection
 
 Write a function that finds all the values shared between two arrays.
+Repeated values are not duplicated in the return value, and the order of result values are determined by the first array.
+
+**Note:** This function returns a new array, and has no side-effects.
 
 ---
 
