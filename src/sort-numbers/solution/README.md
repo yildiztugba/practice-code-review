@@ -1,5 +1,9 @@
 # challenge name: strategy name
 
+<!-- BEGIN DOCS -->
+
+<!-- END DOCS -->
+
 ---
 
 ## Strategy

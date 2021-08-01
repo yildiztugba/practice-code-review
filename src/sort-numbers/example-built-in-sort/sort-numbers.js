@@ -16,7 +16,7 @@
  * sortNumbers([-1, 0, 1]);
  * // -> [-1, 0, 1]
  */
-export const sortNumbers = (arrOfNumbers = []) => {
+export const sortNumbers = (arrOfNumbers) => {
   // create a copy of the argument to avoid side-effects
   const copiedAndSorted = [...arrOfNumbers];
 
